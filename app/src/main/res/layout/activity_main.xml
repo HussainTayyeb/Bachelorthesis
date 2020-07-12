@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eeeeee"
-    tools:context=".MainActivity">
+    tools:context=".App">
 
-    <!--half round circle created with
+    <!--Top design created with
     /drawable/shape_all_pageheader.xml-->
     <ImageView
         android:id="@+id/imageView"
@@ -31,6 +31,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.example.swipe_stack_layout.SwipeStack
+        android:id="@+id/swipeStackLayout_main_questionStack"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="32dp"
+        android:padding="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton_main_correct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0"
+        app:stack_rotation="0"
+        app:stack_size="3" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton_main_wrong"
