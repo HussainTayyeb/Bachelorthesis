@@ -1,0 +1,32 @@
+[
+  {
+    "course": "- Landscape Architecture",
+    "description": "This is a test description.",
+    "image_identifier": "image_course_1"
+  },
+  {
+    "course": "- Political and Social Studies",
+    "description": "This is a test description.",
+    "image_identifier": null
+  },
+  {
+    "course": "- Media informatics",
+    "description": "This is a test description.",
+    "image_identifier": null
+  },
+  {
+    "course": "- Communication design",
+    "description": "This is a test description.",
+    "image_identifier": null
+  },
+  {
+    "course": "- Media and Communications for digital Business",
+    "description": "This is a test description.",
+    "image_identifier": null
+  },
+  {
+    "course": "- Medicine",
+    "description": "This is a test description.",
+    "image_identifier": "image_course_6"
+  }
+]

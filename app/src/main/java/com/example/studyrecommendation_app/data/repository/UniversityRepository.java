@@ -1,10 +1,3 @@
-/*
-
-This class loads data from our DataSource (in this case the questions.json file)
-
- */
-
-
 package com.example.studyrecommendation_app.data.repository;
 
 import org.json.JSONArray;
@@ -19,21 +12,21 @@ import java.util.List;
 
 import com.example.studyrecommendation_app.App;
 import com.example.studyrecommendation_app.R;
-import com.example.studyrecommendation_app.data.model.QuestionPresenter;
+import com.example.studyrecommendation_app.data.model.UniversityPresenter;
 
-public class QuestionRepository {
+public class UniversityRepository {
 
-    public List<QuestionPresenter> getQuestions() {
-        String json = loadQuestionsJson();
-        return parseQuestionsJson(json);
+    public List<UniversityPresenter> getUniversities() {
+        String json = loadUniversitiesJson();
+        return parseUniversitiesJson(json);
     }
-    // This method loads questions from the file res -> raw -> questions.json
-    private String loadQuestionsJson() {
+
+    private String loadUniversitiesJson() {
         InputStream is;
         BufferedInputStream bis;
 
         try {
-            is = App.getContext().getResources().openRawResource(R.raw.questions);
+            is = App.getContext().getResources().openRawResource(R.raw.universities);
             bis = new BufferedInputStream(is);
             StringBuilder sb = new StringBuilder(bis.available());
             int count = 0;
@@ -51,8 +44,8 @@ public class QuestionRepository {
 
     }
 
-    private List<QuestionPresenter> parseQuestionsJson(String json) {
-        ArrayList<QuestionPresenter> result = new ArrayList<>();
+    private List<UniversityPresenter> parseUniversitiesJson(String json) {
+        ArrayList<UniversityPresenter> result = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(json);
@@ -60,15 +53,9 @@ public class QuestionRepository {
 
             while (jsonArray.length() > index) {
                 JSONObject jsonObject = jsonArray.getJSONObject(index);
-                String question = jsonObject.getString("question");
-                Object imageField = jsonObject.get("image");
-                String imageIdentifier;
-                if (jsonObject.has("image") && !jsonObject.isNull("image")) {
-                    imageIdentifier = jsonObject.getString("image");
-                } else imageIdentifier = null;
-                QuestionPresenter presenter = new QuestionPresenter();
-                presenter.setQuestion(question);
-                presenter.setImageIdentifier(imageIdentifier);
+                String name = jsonObject.getString("name");
+                UniversityPresenter presenter = new UniversityPresenter();
+                presenter.setName(name);
                 result.add(presenter);
                 ++index;
             }

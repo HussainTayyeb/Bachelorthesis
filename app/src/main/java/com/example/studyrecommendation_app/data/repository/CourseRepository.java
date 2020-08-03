@@ -1,10 +1,3 @@
-/*
-
-This class loads data from our DataSource (in this case the questions.json file)
-
- */
-
-
 package com.example.studyrecommendation_app.data.repository;
 
 import org.json.JSONArray;
@@ -19,21 +12,21 @@ import java.util.List;
 
 import com.example.studyrecommendation_app.App;
 import com.example.studyrecommendation_app.R;
-import com.example.studyrecommendation_app.data.model.QuestionPresenter;
+import com.example.studyrecommendation_app.data.model.CourseLocal;
 
-public class QuestionRepository {
+public class CourseRepository {
 
-    public List<QuestionPresenter> getQuestions() {
-        String json = loadQuestionsJson();
-        return parseQuestionsJson(json);
+    public List<CourseLocal> getCourses() {
+        String json = loadCoursesJson();
+        return parseCoursesJson(json);
     }
-    // This method loads questions from the file res -> raw -> questions.json
-    private String loadQuestionsJson() {
+
+    private String loadCoursesJson() {
         InputStream is;
         BufferedInputStream bis;
 
         try {
-            is = App.getContext().getResources().openRawResource(R.raw.questions);
+            is = App.getContext().getResources().openRawResource(R.raw.courses);
             bis = new BufferedInputStream(is);
             StringBuilder sb = new StringBuilder(bis.available());
             int count = 0;
@@ -51,8 +44,8 @@ public class QuestionRepository {
 
     }
 
-    private List<QuestionPresenter> parseQuestionsJson(String json) {
-        ArrayList<QuestionPresenter> result = new ArrayList<>();
+    private List<CourseLocal> parseCoursesJson(String json) {
+        ArrayList<CourseLocal> result = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(json);
@@ -60,14 +53,12 @@ public class QuestionRepository {
 
             while (jsonArray.length() > index) {
                 JSONObject jsonObject = jsonArray.getJSONObject(index);
-                String question = jsonObject.getString("question");
-                Object imageField = jsonObject.get("image");
-                String imageIdentifier;
-                if (jsonObject.has("image") && !jsonObject.isNull("image")) {
-                    imageIdentifier = jsonObject.getString("image");
-                } else imageIdentifier = null;
-                QuestionPresenter presenter = new QuestionPresenter();
-                presenter.setQuestion(question);
+                String course = jsonObject.getString("course");
+                String description = jsonObject.getString("description");
+                String imageIdentifier = jsonObject.getString("image_identifier");
+                CourseLocal presenter = new CourseLocal();
+                presenter.setCourse(course);
+                presenter.setDescription(description);
                 presenter.setImageIdentifier(imageIdentifier);
                 result.add(presenter);
                 ++index;

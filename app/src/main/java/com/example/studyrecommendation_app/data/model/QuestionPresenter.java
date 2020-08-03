@@ -6,7 +6,7 @@ to set or get the value of a filed (question, image).
 
  */
 
-package com.example.studyrecommendation_app.data;
+package com.example.studyrecommendation_app.data.model;
 
 public class QuestionPresenter {
     private String question;

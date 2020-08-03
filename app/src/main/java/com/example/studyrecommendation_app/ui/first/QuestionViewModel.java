@@ -8,14 +8,14 @@ to the Activity and we need to load the Questions from our 'questions.json' file
 
  */
 
-package com.example.studyrecommendation_app.first;
+package com.example.studyrecommendation_app.ui.first;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-import com.example.studyrecommendation_app.data.QuestionPresenter;
+import com.example.studyrecommendation_app.data.model.QuestionPresenter;
 import com.example.studyrecommendation_app.data.repository.QuestionRepository;
 
 public class QuestionViewModel extends ViewModel {

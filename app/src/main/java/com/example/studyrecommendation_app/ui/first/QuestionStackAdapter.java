@@ -7,7 +7,7 @@ List<QuestionPresenter>
 
  */
 
-package com.example.studyrecommendation_app.first;
+package com.example.studyrecommendation_app.ui.first;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.studyrecommendation_app.R;
-import com.example.studyrecommendation_app.data.QuestionPresenter;
+import com.example.studyrecommendation_app.data.model.QuestionPresenter;
 
 public class QuestionStackAdapter extends BaseAdapter {
     private List<QuestionPresenter> mData = new ArrayList<>();
@@ -58,7 +58,7 @@ public class QuestionStackAdapter extends BaseAdapter {
         }
         return convertView;
     }
-    //It adds the questions to a list (mData) which holds the questions in a RAM (temporarly)
+    //
     public void addItems(List<QuestionPresenter> data) {
         mData.addAll(data);
         notifyDataSetChanged();
