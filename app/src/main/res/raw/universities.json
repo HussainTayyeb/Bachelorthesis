@@ -1,32 +1,42 @@
 [
   {
-    "name": "- HTW - Berlin"
+    "name": "- HTW - Berlin",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- HU - Berlin"
+    "name": "- HU - Berlin",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- FU - Berlin"
+    "name": "- FU - Berlin",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- UNI - Potsdam"
+    "name": "- UNI - Potsdam",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- HAW - Hamburg"
+    "name": "- HAW - Hamburg",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- HTWK - Leipzig"
+    "name": "- HTWK - Leipzig",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- Goethe-Uni - Frankfurt"
+    "name": "- Goethe-Uni - Frankfurt",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- RWTH - Aachen"
+    "name": "- RWTH - Aachen",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- Uni - Heidelberg"
+    "name": "- Uni - Heidelberg",
+    "image_identifier": "image_course_1"
   },
   {
-    "name": "- TU - Muenchen"
+    "name": "- TU - Muenchen",
+    "image_identifier": "image_course_1"
   }
 ]

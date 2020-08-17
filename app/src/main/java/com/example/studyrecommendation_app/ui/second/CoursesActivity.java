@@ -1,5 +1,6 @@
 package com.example.studyrecommendation_app.ui.second;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,12 +13,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 
 import com.example.studyrecommendation_app.R;
-import com.example.studyrecommendation_app.data.model.CourseLocal;
 import com.example.studyrecommendation_app.data.model.CoursePresenter;
 import com.example.studyrecommendation_app.ui.base.BaseActivity;
+import com.example.studyrecommendation_app.ui.third.UniversityActivity;
 import com.example.swipe_stack_layout.SwipeStack;
 
-public class CoursesActivity extends BaseActivity implements View.OnClickListener {
+public class CoursesActivity extends BaseActivity implements View.OnClickListener, SwipeStack.SwipeStackListener {
     private SwipeStack mSwipeStack;
     private FloatingActionButton mFabCorrect, mFabWrong;
     private CoursesViewModel mCoursesViewModel;
@@ -45,6 +46,7 @@ public class CoursesActivity extends BaseActivity implements View.OnClickListene
     private void setupStack() {
         mCourseStackAdapter = new CourseStackAdapter();
         mSwipeStack.setAdapter(mCourseStackAdapter);
+        mSwipeStack.setListener(this);
     }
 
     private void setupFloatingActionButtons() {
@@ -73,6 +75,26 @@ public class CoursesActivity extends BaseActivity implements View.OnClickListene
                 break;
         }
 
+    }
+
+    @Override
+    public void onViewSwipedToLeft(int position) {
+
+    }
+
+    @Override
+    public void onViewSwipedToRight(int position) {
+        navigateToUniversityActivity();
+    }
+
+    @Override
+    public void onStackEmpty() {
+
+    }
+
+    private void navigateToUniversityActivity() {
+        Intent intent = new Intent(this, UniversityActivity.class);
+        startActivity(intent);
     }
 
 }

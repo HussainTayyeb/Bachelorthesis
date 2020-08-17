@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">studyrecommendation-app</string>
     <string name="main_title">Find your Study Program</string>
+    <string name="university_title">Universities to apply</string>
 </resources>

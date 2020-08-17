@@ -54,8 +54,10 @@ public class UniversityRepository {
             while (jsonArray.length() > index) {
                 JSONObject jsonObject = jsonArray.getJSONObject(index);
                 String name = jsonObject.getString("name");
+                String imageIdentifier = jsonObject.getString("image_identifier");
                 UniversityPresenter presenter = new UniversityPresenter();
                 presenter.setName(name);
+                presenter.setImageIdentifier(imageIdentifier);
                 result.add(presenter);
                 ++index;
             }

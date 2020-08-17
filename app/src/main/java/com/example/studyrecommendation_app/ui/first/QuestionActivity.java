@@ -34,7 +34,7 @@ public class QuestionActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_question);
         mQuestionViewModel = new ViewModelProvider(this).get(QuestionViewModel.class);
         initViews();
         setupStack();
@@ -48,7 +48,7 @@ public class QuestionActivity extends BaseActivity implements View.OnClickListen
         mFabCorrect = findViewById(R.id.floatingActionButton_main_correct);
         mFabWrong = findViewById(R.id.floatingActionButton_main_wrong);
     }
-    // counts the items inside the questions.json
+
     private void observeQuestions() {
         mQuestionViewModel.questions.observe(this, new Observer<List<QuestionPresenter>>() {
             @Override
@@ -69,7 +69,6 @@ public class QuestionActivity extends BaseActivity implements View.OnClickListen
         mFabWrong.setOnClickListener(this);
     }
 
-    //interaction with the buttons to move the card (x - left tick - right)
     @Override
     public void onClick(View view) {
 
@@ -95,7 +94,6 @@ public class QuestionActivity extends BaseActivity implements View.OnClickListen
         navigateToCoursesActivity();
     }
 
-    //switch to the courses activity
     private void navigateToCoursesActivity() {
         Intent intent = new Intent(this, CoursesActivity.class);
         startActivity(intent);
